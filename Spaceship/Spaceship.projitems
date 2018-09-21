@@ -9,7 +9,8 @@
     <Import_RootNamespace>Spaceship</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)src\Game1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)src\Spaceship.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)src\Ship.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Content\" />
