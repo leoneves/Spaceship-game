@@ -10,14 +10,13 @@ namespace LeoApp
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-        Texture2D asteroid_sprite;
         Texture2D space_sprite;
 
         SpriteFont game_font;
         SpriteFont timer_font;
 
         Ship player = new Ship();
+		Asteroid asteroid = new Asteroid(250);
 
         public Spaceship()
         {
@@ -41,6 +40,7 @@ namespace LeoApp
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             player.Sprite = Content.Load<Texture2D>("ship");
+			asteroid.Sprite = Content.Load<Texture2D>("asteroid");
             space_sprite = Content.Load<Texture2D>("space");
             game_font = Content.Load<SpriteFont>("spaceFont");
             timer_font = Content.Load<SpriteFont>("timerFont");
@@ -54,6 +54,7 @@ namespace LeoApp
                 Exit();
             }
             player.ShipUpdate(gameTime);
+			asteroid.AsteroidUPdate(gameTime);
             // TODO: Add your update logic here			
             base.Update(gameTime);
         }
@@ -66,6 +67,7 @@ namespace LeoApp
 
             spriteBatch.Draw(texture: space_sprite, position: new Vector2(0, 0), color: Color.White);
             spriteBatch.Draw(player.Sprite, player.CenterPosition(), Color.White);
+			spriteBatch.Draw(asteroid.Sprite, asteroid.CenterPosition(), Color.White);
 
             spriteBatch.End();
 
