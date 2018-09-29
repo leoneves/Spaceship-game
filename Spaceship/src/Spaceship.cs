@@ -41,7 +41,6 @@ namespace LeoApp
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             player.Sprite = Content.Load<Texture2D>("ship");
-            asteroid_sprite = Content.Load<Texture2D>("asteroid");
             space_sprite = Content.Load<Texture2D>("space");
             game_font = Content.Load<SpriteFont>("spaceFont");
             timer_font = Content.Load<SpriteFont>("timerFont");
@@ -66,7 +65,7 @@ namespace LeoApp
             spriteBatch.Begin();
 
             spriteBatch.Draw(texture: space_sprite, position: new Vector2(0, 0), color: Color.White);
-            spriteBatch.Draw(player.Sprite, player.DrawPosition(), Color.White);
+            spriteBatch.Draw(player.Sprite, player.CenterPosition(), Color.White);
 
             spriteBatch.End();
 
