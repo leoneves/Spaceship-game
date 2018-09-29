@@ -66,8 +66,8 @@ namespace LeoApp
             spriteBatch.Begin();
 
             spriteBatch.Draw(texture: space_sprite, position: new Vector2(0, 0), color: Color.White);
-            spriteBatch.Draw(player.Sprite, player.CenterPosition(), Color.White);
-			spriteBatch.Draw(asteroid.Sprite, asteroid.CenterPosition(), Color.White);
+			spriteBatch.Draw(player.Sprite, player.DrawPosition(), Color.White);
+			spriteBatch.Draw(asteroid.Sprite, asteroid.DrawPosition(), Color.White);
 
             spriteBatch.End();
 

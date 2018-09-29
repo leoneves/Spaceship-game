@@ -12,10 +12,12 @@ namespace LeoApp
 		private int speed;
 		private const int radius = 58;
 		private Vector2 image_size = new Vector2(114, 118);
+		private Vector2 center_position; 
 
 		public Asteroid(int speed)
 		{
 			this.speed = speed;
+			center_position = new Vector2(image_size.X / 2, image_size.Y / 2);
 		}
 
 		public void AsteroidUPdate(GameTime gameTime)
@@ -25,10 +27,10 @@ namespace LeoApp
 			position.X -= adjustment_speed;
 		}
 
-		public Vector2 CenterPosition()
-        {
-            return new Vector2(position.X - image_size.X / 2, position.Y - image_size.Y / 2);
-        }
+		public Vector2 DrawPosition()
+		{
+			return new Vector2(position.X - center_position.X, position.Y - center_position.Y);
+		}
 
 		public Texture2D Sprite
 		{

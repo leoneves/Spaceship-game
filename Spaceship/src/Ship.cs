@@ -11,6 +11,12 @@ namespace LeoApp
         private Texture2D sprite;
         private const int speed = 180;
 		private Vector2 image_size = new Vector2(68, 100);
+		private Vector2 center_position;
+
+        public Ship()
+		{
+			center_position = new Vector2(image_size.X / 2, image_size.Y / 2);
+		}
 
         public void ShipUpdate(GameTime gameTime)
         {
@@ -35,10 +41,10 @@ namespace LeoApp
             }
         }
 
-		public Vector2 CenterPosition()
-		{
-			return new Vector2(position.X - image_size.X/2, position.Y - image_size.Y/2);
-		}
+		public Vector2 DrawPosition()
+        {
+            return new Vector2(position.X - center_position.X, position.Y - center_position.Y);
+        }
 
         public Vector2 Position
         {
