@@ -3,6 +3,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using StoryBoardFlow;
 
 namespace LeoApp
 {
@@ -26,7 +27,9 @@ namespace LeoApp
 
             graphics.PreferredBackBufferWidth = 1024;
             graphics.PreferredBackBufferHeight = 720;
-        }
+            MyClass story = new MyClass();
+            story.update_new();
+        }   
 
         protected override void Initialize()
         {

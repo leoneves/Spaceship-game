@@ -1,5 +1,6 @@
 #### setup
 nuget restore
+nuget install StoryBoardFlow -Source ~/DEV/my_projects/nuget_repo/ -OutputDirectory packages
 
 #### Build project:
 msbuild && cd Spaceship.Linux/ && msbuild && cd ..
