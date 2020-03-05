@@ -1,3 +1,6 @@
+#### setup
+nuget restore
+
 #### Build project:
 msbuild && cd Spaceship.Linux/ && msbuild && cd ..
 
